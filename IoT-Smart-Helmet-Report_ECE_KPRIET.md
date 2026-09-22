@@ -287,4 +287,4 @@ This integrated wireless capability allows the smart helmet to communicate with 
 
 ## 📜 License
 
-This project is developed for **academic, research, and educational purposes**.
+This project is developed for the Silicon Labs Centre of Innovation in IoT Program.
