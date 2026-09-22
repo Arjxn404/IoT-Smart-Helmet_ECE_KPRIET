@@ -1,87 +1,65 @@
 # 🪖 IoT Smart Helmet — Industrial Worker Safety Monitoring System
 
-<p align="center">
-  <b>SiWx917 Wi-Fi 6 + Bluetooth LE | IoT | Edge Monitoring | Cloud Dashboard</b>
-</p>
+## Overview
 
-<p align="center">
-  An IoT-enabled industrial safety helmet designed to monitor hazardous conditions, detect worker impacts, and transmit real-time safety information through wireless connectivity.
-</p>
+The **IoT Smart Helmet** is an embedded worker-safety monitoring system designed for industrial environments where workers may be exposed to **gas leakage, excessive temperature, and accidental impacts or falls**.
 
----
+The system integrates multiple sensors with the **Silicon Labs SiWx917 Wi-Fi 6 + Bluetooth LE platform** to collect safety-related information, process sensor data, evaluate hazardous conditions, and transmit safety information wirelessly.
 
-## 📌 Project Overview
+A web-based dashboard provides a centralized interface for monitoring helmet status and sensor information.
 
-The **IoT Smart Helmet** is an embedded safety-monitoring system developed for industrial environments where workers may be exposed to **gas leakage, excessive temperature, and accidental impacts/falls**.
+## Key Features
 
-The system combines multiple sensors with the **Silicon Labs SiWx917 Wi-Fi 6 + Bluetooth LE platform** to collect safety-related parameters and communicate the data to a cloud-connected monitoring system.
+* 🛡️ Worker Safety Monitoring
+* 💥 Impact and Fall Detection
+* 🌫️ Gas-Level Monitoring
+* 🌡️ Temperature and Humidity Monitoring
+* 📡 Wi-Fi 6 Connectivity
+* 🔵 Bluetooth Low Energy (BLE)
+* ☁️ Cloud/Data Communication
+* 📊 Web-Based Monitoring Dashboard
+* ⚡ Edge-Based Sensor Processing
+* 🚨 Hazard Status Evaluation
 
-A web dashboard provides a centralized interface for viewing helmet status and sensor information.
+## Hardware Platform
 
-### 🎯 Objective
+* **Silicon Labs SiWx917 BRD2605A** — Main controller and wireless communication platform
+* **MPU6050** — Accelerometer and gyroscope for impact and motion detection
+* **MQ-135** — Gas and air-quality monitoring
+* **DHT22** — Temperature and humidity measurement
+* **Li-ion Battery** — Portable power source
+* **Smart Helmet** — Physical safety platform
 
-To develop a compact and connected worker-safety system capable of:
+## Technologies Used
 
-* Monitoring environmental conditions
-* Detecting abnormal impacts or falls
-* Identifying potentially hazardous gas levels
-* Processing sensor information at the edge
-* Transmitting safety data wirelessly
-* Providing real-time monitoring through a web dashboard
+* Embedded C
+* Python
+* Wi-Fi 6
+* Bluetooth Low Energy (BLE)
+* REST API
+* HTML
+* CSS
+* JavaScript
+* SiWx917 SDK / Development Tools
 
----
-
-## 🚀 Key Features
-
-### 🛡️ Worker Safety Monitoring
-
-* Impact / fall detection using **MPU6050**
-* Gas-level monitoring using **MQ-135**
-* Temperature and humidity monitoring using **DHT22**
-* Hazard-status evaluation
-
-### 📡 Wireless Connectivity
-
-* **Wi-Fi 6** connectivity using SiWx917
-* **Bluetooth Low Energy (BLE)** capability
-* Wireless transmission of safety information
-
-### ☁️ Cloud & Data Layer
-
-* Sensor data preparation for cloud transmission
-* Python-based data uploader
-* REST-based communication architecture
-* Structured sensor data format
-
-### 📊 Monitoring Dashboard
-
-* Helmet identification
-* Current safety status
-* Gas-level visualization
-* Impact-force information
-* Temperature monitoring
-* Web-based monitoring interface
-
----
-
-# 🏗️ System Architecture
+## System Architecture
 
 ```text
                  ┌─────────────────────────┐
-                 │      SMART HELMET        │
+                 │      SMART HELMET       │
                  │                         │
                  │  MPU6050  → Impact      │
                  │  MQ-135   → Gas         │
-                 │  DHT22    → Environment  │
+                 │  DHT22    → Environment │
                  └────────────┬────────────┘
                               │
                               ▼
                  ┌─────────────────────────┐
                  │       SiWx917 SoC       │
                  │                         │
-                 │ Sensor Processing       │
-                 │ Hazard Evaluation       │
-                 │ Wi-Fi 6 / BLE           │
+                 │  Sensor Processing      │
+                 │  Hazard Evaluation      │
+                 │  Wi-Fi 6 / BLE          │
                  └────────────┬────────────┘
                               │
                          Wi-Fi / BLE
@@ -90,37 +68,33 @@ To develop a compact and connected worker-safety system capable of:
                  ┌─────────────────────────┐
                  │     Cloud / Server      │
                  │                         │
-                 │ Data Reception           │
-                 │ Data Storage             │
+                 │  Data Reception         │
+                 │  Data Storage           │
                  └────────────┬────────────┘
                               │
                               ▼
                  ┌─────────────────────────┐
                  │    Web Dashboard        │
                  │                         │
-                 │ Status                  │
-                 │ Gas Level               │
-                 │ Impact                  │
-                 │ Temperature             │
+                 │  Safety Status          │
+                 │  Gas Level              │
+                 │  Impact                 │
+                 │  Temperature            │
                  └─────────────────────────┘
 ```
 
----
-
-# 🔧 Hardware Components
+## Hardware Components
 
 | Component                         | Purpose                                                   |
 | --------------------------------- | --------------------------------------------------------- |
-| **Silicon Labs SiWx917 BRD2605A** | Main controller, Wi-Fi 6 & BLE connectivity               |
+| **Silicon Labs SiWx917 BRD2605A** | Main controller, Wi-Fi 6 and BLE connectivity             |
 | **MPU6050**                       | Accelerometer / gyroscope for impact and motion detection |
-| **MQ-135**                        | Gas / air-quality monitoring                              |
+| **MQ-135**                        | Gas and air-quality monitoring                            |
 | **DHT22**                         | Temperature and humidity measurement                      |
 | **Li-ion Battery**                | Portable power source                                     |
-| Smart Helmet                      | Physical safety platform                                  |
+| **Smart Helmet**                  | Physical worker-safety platform                           |
 
----
-
-# 💻 Software & Technologies
+## Software & Technologies
 
 | Technology                          | Usage                              |
 | ----------------------------------- | ---------------------------------- |
@@ -134,9 +108,7 @@ To develop a compact and connected worker-safety system capable of:
 | **REST API**                        | Data transmission architecture     |
 | **SiWx917 SDK / Development Tools** | Embedded development               |
 
----
-
-# 📂 Project Structure
+## Project Structure
 
 ```text
 IoT-Smart-Helmet/
@@ -158,71 +130,74 @@ IoT-Smart-Helmet/
 └── 📄 README.md
 ```
 
----
+## Firmware Architecture
 
-# ⚙️ Firmware Architecture
-
-The embedded firmware follows a simple monitoring cycle:
+The embedded firmware follows a continuous monitoring cycle:
 
 ```text
-        START
-          │
-          ▼
-   Initialize SiWx917
-          │
-          ▼
-   Initialize Sensors
-          │
-          ▼
-    Read Sensor Data
-          │
-          ▼
-   Evaluate Conditions
-          │
-      ┌───┴────┐
-      │        │
-    SAFE     HAZARD
-      │        │
-      │        ▼
-      │   Generate Alert
-      │        │
-      │        ▼
-      │   Send Data
-      │        │
-      └────┬───┘
-           ▼
-     Continue Monitoring
+             START
+               │
+               ▼
+       Initialize SiWx917
+               │
+               ▼
+        Initialize Sensors
+               │
+               ▼
+         Read Sensor Data
+               │
+               ▼
+       Evaluate Conditions
+               │
+          ┌────┴────┐
+          │         │
+        SAFE      HAZARD
+          │         │
+          │         ▼
+          │    Generate Alert
+          │         │
+          │         ▼
+          └──── Send Data
+                    │
+                    ▼
+            Continue Monitoring
 ```
 
----
+## Hazard Detection
 
-# 🧠 Hazard Detection Concept
+The system evaluates multiple sensor parameters to determine the current safety condition of the worker.
 
-The system evaluates multiple sensor parameters to determine the current helmet condition.
-
-### Example parameters
+### Gas Monitoring
 
 ```text
 Gas Level
     ↓
-MQ-135
+  MQ-135
     ↓
 Hazard Evaluation
+```
 
+### Impact / Fall Detection
+
+```text
 Impact / Motion
-    ↓
-MPU6050
-    ↓
+      ↓
+   MPU6050
+      ↓
 Fall / Impact Evaluation
+```
 
+### Environmental Monitoring
+
+```text
 Temperature & Humidity
-    ↓
-DHT22
-    ↓
+          ↓
+        DHT22
+          ↓
 Environmental Monitoring
 ```
 
-The resulting information can be classified into states such as:
+The resulting safety condition can be classified into:
 
 ```text
 🟢 SAFE
@@ -230,13 +205,11 @@ The resulting information can be classified into states such as:
 🔴 HAZARD
 ```
 
----
-
-# ☁️ Cloud Data Flow
+## Cloud Data Flow
 
 Sensor information is structured before being transmitted to the cloud layer.
 
-Example data:
+Example sensor data:
 
 ```json
 {
@@ -248,135 +221,121 @@ Example data:
 }
 ```
 
-The current repository includes a Python-based uploader for demonstrating the cloud communication layer.
+The repository includes a Python-based uploader for demonstrating the cloud communication layer.
 
-> **Note:** The repository currently contains prototype/simulated cloud communication. The placeholder cloud endpoint should be replaced with the deployment server/Firebase endpoint before production use.
+> **Note:** The current repository contains prototype/simulated cloud communication. The placeholder cloud endpoint should be replaced with the actual deployment server or Firebase endpoint before production use.
 
----
+## Web Dashboard
 
-# 📊 Web Dashboard
-
-The dashboard provides a simple monitoring interface for the smart helmet.
+The web dashboard provides a centralized interface for monitoring the smart helmet.
 
 ### Dashboard Parameters
 
 * 🪖 Helmet ID
-* 🟢 Current safety status
-* 🌫️ Gas level
-* 💥 Impact force
+* 🟢 Current Safety Status
+* 🌫️ Gas Level
+* 💥 Impact Force
 * 🌡️ Temperature
 
-The dashboard is implemented using:
+The dashboard uses:
 
 ```text
 HTML
- ↓
+  ↓
 CSS
- ↓
+  ↓
 JavaScript
- ↓
+  ↓
 Sensor / Cloud Data
 ```
 
----
-
-# 🔄 Complete Data Flow
+## Complete Data Flow
 
 ```text
-Sensors
-   │
-   ▼
-SiWx917
-   │
-   ├── Sensor Processing
-   │
-   ├── Hazard Evaluation
-   │
-   └── Wi-Fi / BLE Communication
-             │
-             ▼
-        Cloud / Server
-             │
-             ▼
-       Web Dashboard
-             │
-             ▼
-      Safety Monitoring
+             Sensors
+                │
+                ▼
+             SiWx917
+                │
+       ┌────────┼─────────┐
+       │        │         │
+       ▼        ▼         ▼
+   Sensor    Hazard    Wi-Fi / BLE
+ Processing  Evaluation Communication
+                         │
+                         ▼
+                   Cloud / Server
+                         │
+                         ▼
+                   Web Dashboard
+                         │
+                         ▼
+                  Safety Monitoring
 ```
 
----
-
-# 🧪 Current Prototype Status
+## Current Prototype Status
 
 | Module                       | Status               |
 | ---------------------------- | -------------------- |
-| SiWx917 development platform | 🟢 Implemented       |
-| Sensor architecture          | 🟢 Defined           |
-| MPU6050 integration          | 🟡 Prototype         |
-| MQ-135 integration           | 🟡 Prototype         |
-| DHT22 integration            | 🟡 Prototype         |
-| Firmware architecture        | 🟡 Prototype         |
-| Cloud communication          | 🟡 Prototype         |
-| Web dashboard                | 🟢 Implemented       |
-| End-to-end deployment        | 🔵 Under development |
+| SiWx917 Development Platform | 🟢 Implemented       |
+| Sensor Architecture          | 🟢 Defined           |
+| MPU6050 Integration          | 🟡 Prototype         |
+| MQ-135 Integration           | 🟡 Prototype         |
+| DHT22 Integration            | 🟡 Prototype         |
+| Firmware Architecture        | 🟡 Prototype         |
+| Cloud Communication          | 🟡 Prototype         |
+| Web Dashboard                | 🟢 Implemented       |
+| End-to-End Deployment        | 🔵 Under Development |
 
 > 🟢 Implemented    🟡 Prototype    🔵 Under Development
 
----
+## Applications
 
-# 🎯 Applications
+The IoT Smart Helmet can be adapted for:
 
-The system can be adapted for:
+* 🏭 Manufacturing Industries
+* ⛏️ Mining Environments
+* 🏗️ Construction Sites
+* 🧪 Chemical Industries
+* ⚡ Industrial Maintenance
+* 🚧 Hazardous Work Zones
 
-* 🏭 Manufacturing industries
-* ⛏️ Mining environments
-* 🏗️ Construction sites
-* 🧪 Chemical industries
-* ⚡ Industrial maintenance
-* 🚧 Hazardous work zones
-
----
-
-# 🔮 Future Enhancements
+## Future Enhancements
 
 The prototype can be extended with:
 
-* 🚨 Emergency SOS button
-* 📍 GPS-based worker location
-* 📱 Mobile notifications
-* 🔔 Buzzer / vibration alerts
-* 📈 Historical sensor analytics
-* ☁️ Real-time cloud database
-* 🤖 ML-based accident prediction
-* 🔋 Battery-level monitoring
-* 👷 Worker identification
-* 📡 OTA firmware updates
+* 🚨 Emergency SOS Button
+* 📍 GPS-Based Worker Location
+* 📱 Mobile Notifications
+* 🔔 Buzzer / Vibration Alerts
+* 📈 Historical Sensor Analytics
+* ☁️ Real-Time Cloud Database
+* 🤖 ML-Based Accident Prediction
+* 🔋 Battery-Level Monitoring
+* 👷 Worker Identification
+* 📡 OTA Firmware Updates
 
----
-
-# 🏆 Project Highlights
+## Project Highlights
 
 ### Why SiWx917?
 
-The **SiWx917** provides an integrated wireless platform combining:
+The **Silicon Labs SiWx917** provides an integrated wireless platform combining **Wi-Fi 6 and Bluetooth LE** capabilities.
 
 ```text
-              SiWx917
-                 │
-        ┌────────┴────────┐
-        │                 │
-     Wi-Fi 6             BLE
-        │                 │
-        └────────┬────────┘
-                 │
-          IoT Connectivity
+                 SiWx917
+                    │
+            ┌───────┴───────┐
+            │               │
+         Wi-Fi 6           BLE
+            │               │
+            └───────┬───────┘
+                    │
+             IoT Connectivity
 ```
 
-This enables the smart helmet to communicate with connected systems without requiring a separate Wi-Fi and Bluetooth controller.
+This integrated wireless capability allows the smart helmet to communicate with connected systems without requiring separate Wi-Fi and Bluetooth controllers.
 
----
-
-# 👨‍💻 Project Team
+## Project Information
 
 **Project:** IoT Smart Helmet – Industrial Worker Safety Monitoring System
 
@@ -384,14 +343,6 @@ This enables the smart helmet to communicate with connected systems without requ
 
 **Domain:** Embedded Systems • IoT • Wireless Communication • Industrial Safety
 
----
-
-# 📜 License
+## 📜 License
 
 This project is developed for **academic, research, and educational purposes**.
-
----
-
-<p align="center">
-  <b>🪖 Building Safer Connected Workplaces with IoT</b>
-</p>
