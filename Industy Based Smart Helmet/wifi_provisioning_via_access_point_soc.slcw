@@ -1,0 +1,7 @@
+---
+workspace_name: "wifi_provisioning_via_access_point_soc"
+label: "wifi_provisioning_via_access_point_soc"
+project:
+- id: "main"
+  path: "Industry-based-Smart-Helmet.slcp"
+  output: "."
