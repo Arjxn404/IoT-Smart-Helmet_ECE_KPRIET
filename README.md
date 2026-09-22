@@ -41,7 +41,7 @@ The IoT Smart Helmet is an embedded worker-safety monitoring system developed us
 
 For the complete project documentation and architecture, please refer to:
 
-**[IoT-Smart-Helmet Documentation](./IoT-Smart-Helmet-Report_ECE_KPRIET.md)**
+**[IoT-Smart-Helmet Documentation](./IoT-Smart-Helmet-Report_ECE_KPRIET)**
 
 Presentation slides: **[Project Presentation](./IoT-Smart-Helmet.pptx)**
 
