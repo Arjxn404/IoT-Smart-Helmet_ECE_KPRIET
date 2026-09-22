@@ -44,43 +44,17 @@ A web-based dashboard provides a centralized interface for monitoring helmet sta
 
 ## System Architecture
 
-```text
-                 ┌─────────────────────────┐
-                 │      SMART HELMET       │
-                 │                         │
-                 │  MPU6050  → Impact      │
-                 │  MQ-135   → Gas         │
-                 │  DHT22    → Environment │
-                 └────────────┬────────────┘
-                              │
-                              ▼
-                 ┌─────────────────────────┐
-                 │       SiWx917 SoC       │
-                 │                         │
-                 │  Sensor Processing      │
-                 │  Hazard Evaluation      │
-                 │  Wi-Fi 6 / BLE          │
-                 └────────────┬────────────┘
-                              │
-                         Wi-Fi / BLE
-                              │
-                              ▼
-                 ┌─────────────────────────┐
-                 │     Cloud / Server      │
-                 │                         │
-                 │  Data Reception         │
-                 │  Data Storage           │
-                 └────────────┬────────────┘
-                              │
-                              ▼
-                 ┌─────────────────────────┐
-                 │    Web Dashboard        │
-                 │                         │
-                 │  Safety Status          │
-                 │  Gas Level              │
-                 │  Impact                 │
-                 │  Temperature            │
-                 └─────────────────────────┘
+```mermaid
+flowchart TD
+    subgraph Helmet["🪖 Smart Helmet"]
+        S1[MPU6050 → Impact]
+        S2[MQ-135 → Gas]
+        S3[DHT22 → Environment]
+    end
+
+    Helmet --> B["SiWx917 SoC<br/>Sensor Processing • Hazard Evaluation • Wi-Fi 6 / BLE"]
+    B -->|Wi-Fi / BLE| C["Cloud / Server<br/>Data Reception • Data Storage"]
+    C --> D["Web Dashboard<br/>Safety Status • Gas Level • Impact • Temperature"]
 ```
 
 ## Hardware Components
@@ -134,33 +108,17 @@ IoT-Smart-Helmet/
 
 The embedded firmware follows a continuous monitoring cycle:
 
-```text
-             START
-               │
-               ▼
-       Initialize SiWx917
-               │
-               ▼
-        Initialize Sensors
-               │
-               ▼
-         Read Sensor Data
-               │
-               ▼
-       Evaluate Conditions
-               │
-          ┌────┴────┐
-          │         │
-        SAFE      HAZARD
-          │         │
-          │         ▼
-          │    Generate Alert
-          │         │
-          │         ▼
-          └──── Send Data
-                    │
-                    ▼
-            Continue Monitoring
+```mermaid
+flowchart TD
+    A[Start] --> B[Initialize SiWx917]
+    B --> C[Initialize Sensors]
+    C --> D[Read Sensor Data]
+    D --> E{Evaluate Conditions}
+    E -->|Safe| F[Send Data]
+    E -->|Hazard| G[Generate Alert]
+    G --> F
+    F --> H[Continue Monitoring]
+    H --> D
 ```
 
 ## Hazard Detection
@@ -169,32 +127,23 @@ The system evaluates multiple sensor parameters to determine the current safety 
 
 ### Gas Monitoring
 
-```text
-Gas Level
-    ↓
-  MQ-135
-    ↓
-Hazard Evaluation
+```mermaid
+flowchart LR
+    A[Gas Level] --> B[MQ-135] --> C[Hazard Evaluation]
 ```
 
 ### Impact / Fall Detection
 
-```text
-Impact / Motion
-      ↓
-   MPU6050
-      ↓
-Fall / Impact Evaluation
+```mermaid
+flowchart LR
+    A[Impact / Motion] --> B[MPU6050] --> C[Fall / Impact Evaluation]
 ```
 
 ### Environmental Monitoring
 
-```text
-Temperature & Humidity
-          ↓
-        DHT22
-          ↓
-Environmental Monitoring
+```mermaid
+flowchart LR
+    A[Temperature & Humidity] --> B[DHT22] --> C[Environmental Monitoring]
 ```
 
 The resulting safety condition can be classified into:
@@ -239,38 +188,22 @@ The web dashboard provides a centralized interface for monitoring the smart helm
 
 The dashboard uses:
 
-```text
-HTML
-  ↓
-CSS
-  ↓
-JavaScript
-  ↓
-Sensor / Cloud Data
+```mermaid
+flowchart LR
+    A[HTML] --> B[CSS] --> C[JavaScript] --> D[Sensor / Cloud Data]
 ```
 
 ## Complete Data Flow
 
-```text
-             Sensors
-                │
-                ▼
-             SiWx917
-                │
-       ┌────────┼─────────┐
-       │        │         │
-       ▼        ▼         ▼
-   Sensor    Hazard    Wi-Fi / BLE
- Processing  Evaluation Communication
-                         │
-                         ▼
-                   Cloud / Server
-                         │
-                         ▼
-                   Web Dashboard
-                         │
-                         ▼
-                  Safety Monitoring
+```mermaid
+flowchart TD
+    A[Sensors] --> B[SiWx917]
+    B --> C[Sensor Processing]
+    B --> D[Hazard Evaluation]
+    B --> E[Wi-Fi / BLE Communication]
+    E --> F[Cloud / Server]
+    F --> G[Web Dashboard]
+    G --> H[Safety Monitoring]
 ```
 
 ## Current Prototype Status
@@ -287,7 +220,7 @@ Sensor / Cloud Data
 | Web Dashboard                | 🟢 Implemented       |
 | End-to-End Deployment        | 🔵 Under Development |
 
-> 🟢 Implemented    🟡 Prototype    🔵 Under Development
+> 🟢 Implemented    🟡 Prototype    🔵 Under Development
 
 ## Applications
 
@@ -321,16 +254,12 @@ The prototype can be extended with:
 
 The **Silicon Labs SiWx917** provides an integrated wireless platform combining **Wi-Fi 6 and Bluetooth LE** capabilities.
 
-```text
-                 SiWx917
-                    │
-            ┌───────┴───────┐
-            │               │
-         Wi-Fi 6           BLE
-            │               │
-            └───────┬───────┘
-                    │
-             IoT Connectivity
+```mermaid
+flowchart TD
+    A[SiWx917] --> B[Wi-Fi 6]
+    A --> C[BLE]
+    B --> D[IoT Connectivity]
+    C --> D
 ```
 
 This integrated wireless capability allows the smart helmet to communicate with connected systems without requiring separate Wi-Fi and Bluetooth controllers.
@@ -338,6 +267,19 @@ This integrated wireless capability allows the smart helmet to communicate with 
 ## Project Information
 
 **Project:** IoT Smart Helmet – Industrial Worker Safety Monitoring System
+
+## Maintainers / Contacts
+
+| Name             | Role           | Contact                                                             |
+| ---------------- | -------------- | ------------------------------------------------------------------- |
+| Arjun V          | Developer      | [arjunvasanthakumar@gmail.com](mailto:arjunvasanthakumar@gmail.com) |
+| Harish Kumar S   | Developer      | [S-harishkumarsoffl@gmail.com](mailto:S-harishkumarsoffl@gmail.com) |
+| Kavya Sri R      | Developer      | [kavyasrirdofficial@gmail.com](mailto:kavyasrirdofficial@gmail.com) |
+| Samhita M        | Developer      | [samhitamanikandan@gmail.com](mailto:samhitamanikandan@gmail.com)   |
+| Shree Varsha R K | Developer      | [shreevarshark@gmail.com](mailto:shreevarshark@gmail.com)           |
+| Sridharshini K   | Developer      | [sdmithu24@gmail.com](mailto:sdmithu24@gmail.com)                   |
+| Jaikumar R       | Faculty Mentor |                                                                     |
+
 
 **Institution:** KPR Institute of Engineering and Technology (KPRIET)
 
