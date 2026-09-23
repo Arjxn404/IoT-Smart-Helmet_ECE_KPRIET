@@ -270,15 +270,15 @@ This integrated wireless capability allows the smart helmet to communicate with 
 
 ## Maintainers / Contacts
 
-| Name             | Role           | Contact                                                             |
-| ---------------- | -------------- | ------------------------------------------------------------------- |
-| Arjun V          | Developer      | [arjunvasanthakumar@gmail.com](mailto:arjunvasanthakumar@gmail.com) |
-| Harish Kumar S   | Developer      | [S-harishkumarsoffl@gmail.com](mailto:S-harishkumarsoffl@gmail.com) |
-| Kavya Sri R      | Developer      | [kavyasrirdofficial@gmail.com](mailto:kavyasrirdofficial@gmail.com) |
-| Samhita M        | Developer      | [samhitamanikandan@gmail.com](mailto:samhitamanikandan@gmail.com)   |
-| Shree Varsha R K | Developer      | [shreevarshark@gmail.com](mailto:shreevarshark@gmail.com)           |
-| Sridharshini K   | Developer      | [sdmithu24@gmail.com](mailto:sdmithu24@gmail.com)                   |
-| Jaikumar R       | Faculty Mentor |                                                                     |
+| Name             | Role           | Contact                                                                     |
+| ---------------- | -------------- | -------------------------------------------------------------------         |
+| Arjun V          | Developer      | [arjunvasanthakumar2005@gmail.com](mailto:arjunvasanthakumar2005@gmail.com) |
+| Harish Kumar S   | Developer      | [S-harishkumarsoffl@gmail.com](mailto:S-harishkumarsoffl@gmail.com)         |
+| Kavya Sri R      | Developer      | [kavyasrirdofficial@gmail.com](mailto:kavyasrirdofficial@gmail.com)         |
+| Samhita M        | Developer      | [samhitamanikandan@gmail.com](mailto:samhitamanikandan@gmail.com)           |
+| Shree Varsha R K | Developer      | [shreevarshark@gmail.com](mailto:shreevarshark@gmail.com)                   |
+| Sridharshini K   | Developer      | [sdmithu24@gmail.com](mailto:sdmithu24@gmail.com)                           |
+| Jaikumar R       | Faculty Mentor |                                                                             |
 
 
 **Institution:** KPR Institute of Engineering and Technology (KPRIET)
