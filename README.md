@@ -50,7 +50,7 @@ Presentation slides: **[Project Presentation](./IoT-Smart-Helmet.pptx)**
 | **Name**         | **Role**       | **Contact**                                                                     |
 | ---------------- | -------------- | -----------------------------------------------------------------------         |
 | Arjun V          | Developer      | [arjunvasanthakumar2005@gmail.com](mailto:arjunvasanthakumar2005@gmail.com)     |
-| Harish Kumar S   | Developer      | [S-harishkumarsoffl@gmail.com](mailto:S-harishkumarsoffl@gmail.com)             |
+| Harish Kumar S   | Developer      | [S-harishkumarsoffl@gmail.com](mailto:harishkumarsoffl@gmail.com)             |
 | Kavya Sri R      | Developer      | [kavyasrirdofficial@gmail.com](mailto:kavyasrirdofficial@gmail.com)             |  
 | Samhita M        | Developer      | [samhitamanikandan@gmail.com](mailto:samhitamanikandan@gmail.com)               |
 | Shree Varsha R K | Developer      | [shreevarshark@gmail.com](mailto:shreevarshark@gmail.com)                       |
